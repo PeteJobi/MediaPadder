@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MediaPadder (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "MediaPadder (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
