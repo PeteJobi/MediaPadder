@@ -1,0 +1,18 @@
+[submodule "TextToTimeSpanWinUI"]
+	path = TextToTimeSpanWinUI
+	url = https://github.com/PeteJobi/TextToTimeSpanWinUI.git
+[submodule "TimelineWinUI"]
+	path = TimelineWinUI
+	url = https://github.com/PeteJobi/TimelineWinUI.git
+[submodule "MediaPadderPageWinUI"]
+	path = MediaPadderPageWinUI
+	url = https://github.com/PeteJobi/MediaPadderPageWinUI.git
+[submodule "DraggerResizerWinUI"]
+	path = DraggerResizerWinUI
+	url = https://github.com/PeteJobi/DraggerResizerWinUI.git
+[submodule "WinUIShared"]
+	path = WinUIShared
+	url = https://github.com/PeteJobi/WinUIShared.git
+[submodule "FileLogger"]
+	path = FileLogger
+	url = https://github.com/PeteJobi/FileLogger.git
