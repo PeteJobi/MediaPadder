@@ -4,10 +4,16 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Project Path="DraggerResizerWinUI/DraggerResizer.shproj" Id="26ba5b05-9f47-4fb6-873d-ca48909f653e" />
+  <Project Path="FileLogger/FileLogger/FileLogger.csproj" />
   <Project Path="MediaPadder/MediaPadder.csproj">
     <Platform Solution="*|ARM64" Project="ARM64" />
     <Platform Solution="*|x64" Project="x64" />
     <Platform Solution="*|x86" Project="x86" />
     <Deploy />
   </Project>
+  <Project Path="MediaPadderPageWinUI/MediaPadderPage.shproj" Id="bb788274-9a26-49f6-a93b-88e69425d5fd" />
+  <Project Path="TextToTimeSpanWinUI/TextToTimeSpan.shproj" Id="8473885d-bd20-4cd5-9848-93dff6689070" />
+  <Project Path="TimelineWinUI/Timeline.shproj" Id="8a87ff88-d9fa-499f-971f-6a8b191eb7c5" />
+  <Project Path="WinUIShared/WinUIShared.shproj" Id="eaededf3-cc91-4d2b-8476-35dd81f8d00a" />
 </Solution>

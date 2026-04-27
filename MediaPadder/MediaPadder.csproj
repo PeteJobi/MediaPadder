@@ -46,6 +46,9 @@
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260317003" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FileLogger\FileLogger\FileLogger.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Update="Assets\ffmpeg.exe">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -72,5 +75,9 @@
     <PublishTrimmed Condition="'$(Configuration)' == 'Debug'">False</PublishTrimmed>
     <PublishTrimmed Condition="'$(Configuration)' != 'Debug'">True</PublishTrimmed>
   </PropertyGroup>
-  <Import Project="..\MediaPadderPage\MediaPadderPage.projitems" Label="Shared" />
+  <Import Project="..\DraggerResizerWinUI\DraggerResizer.projitems" Label="Shared" />
+  <Import Project="..\MediaPadderPageWinUI\MediaPadderPage.projitems" Label="Shared" />
+  <Import Project="..\TextToTimeSpanWinUI\TextToTimeSpan.projitems" Label="Shared" />
+  <Import Project="..\TimelineWinUI\Timeline.projitems" Label="Shared" />
+  <Import Project="..\WinUIShared\WinUIShared.projitems" Label="Shared" />
 </Project>
