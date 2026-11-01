@@ -10,8 +10,8 @@
 
   <Identity
     Name="d583b0fd-9153-48a3-9ddc-c456f997ace2"
-    Publisher="CN=maste"
-    Version="1.0.0.0" />
+    Publisher="CN=PIE Softwares"
+    Version="2.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="d583b0fd-9153-48a3-9ddc-c456f997ace2" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
@@ -35,8 +35,8 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="MediaPadder"
-        Description="MediaPadder"
+        DisplayName="Media Padder"
+        Description="Media Padder is a program that allows for padding the dimensions of videos and images. With this, you can do things like letterboxing, or quickly giving an image a solid border."
         BackgroundColor="transparent"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png">
