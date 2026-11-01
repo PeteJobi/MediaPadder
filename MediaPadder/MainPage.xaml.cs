@@ -27,61 +27,35 @@ namespace MediaPadder
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private TitleBar _titleBar;
+        private string? _ffmpegPath;
+        private readonly EventHandler<string> _fileDropped;
+        private readonly EventHandler<string> _ffmpegSet;
+        public readonly string[] allSupportedTypes = [".mkv", ".mp4", ".mov", ".avi", ".png", ".jpg", ".jpeg", ".gif"];
+
         public MainPage()
         {
+            _fileDropped = (_, path) => GoToPadder(path);
+            _ffmpegSet = (_, path) => _ffmpegPath = path;
             InitializeComponent();
         }
 
-        private async void MainPage_OnDrop(object sender, DragEventArgs e)
+        private void GoToPadder(string mediaPath)
         {
-            if (e.DataView.Contains(StandardDataFormats.StorageItems))
-            {
-                var items = await e.DataView.GetStorageItemsAsync();
-                GoToPadder(items[0].Path);
-            }
-        }
-
-        private void MainPage_OnDragOver(object sender, DragEventArgs e)
-        {
-            e.AcceptedOperation = DataPackageOperation.Copy;
-        }
-
-        private async void ShowFilePicker(object sender, RoutedEventArgs e)
-        {
-            string[] allSupportedTypes = [".png", ".jpg", ".mkv", ".mp4"];
-            var filePicker = new FileOpenPicker();
-            filePicker.SuggestedStartLocation = PickerLocationId.VideosLibrary;
-            foreach (var supportedType in allSupportedTypes)
-            {
-                filePicker.FileTypeFilter.Add(supportedType);
-            }
-            var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(MainWindow.Window);
-            WinRT.Interop.InitializeWithWindow.Initialize(filePicker, hwnd);
-            var file = await filePicker.PickSingleFileAsync();
-            GoToPadder(file.Path);
-        }
-
-        private async void GoToPadder(string mediaPath)
-        {
-            string ffmpegPath;
-            try
-            {
-                ffmpegPath = Path.Join(Package.Current.InstalledLocation.Path, "Assets/ffmpeg.exe");
-            }
-            catch (InvalidOperationException)
-            {
-                ffmpegPath = "Assets/ffmpeg.exe";
-            }
-            if (!File.Exists(ffmpegPath))
-            {
-                await ErrorDialog.ShowAsync();
-                return;
-            }
-            Frame.Navigate(typeof(MediaPadderPage.MediaPadderPage), new MediaPadderPage.PadderProps { FfmpegPath = ffmpegPath, MediaPath = mediaPath, TypeToNavigateTo = typeof(MainPage).FullName });
+            if (_ffmpegPath == null) return;
+            Frame.Navigate(typeof(MediaPadderPage.MediaPadderPage), new MediaPadderPage.PadderProps { FfmpegPath = _ffmpegPath, MediaPath = mediaPath, TypeToNavigateTo = typeof(MainPage).FullName });
+            _titleBar.IsBackButtonVisible = true;
         }
 
         protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
+            if (e.Parameter is TitleBar titleBar)
+            {
+                _titleBar = titleBar;
+                return;
+            }
+            _titleBar.IsBackButtonVisible = false;
+
             if (e.Parameter is string outputFile)
             {
                 Console.WriteLine($"Path of output file is {outputFile}");
