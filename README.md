@@ -1,7 +1,8 @@
 ## Media Padder
 This provides a reuseable WinUI 3 page with an interface that allows for padding the dimensions of videos and images. With this, you can do things like [letterboxing](https://www.merriam-webster.com/dictionary/letterboxing), or quickly giving an image a solid border. Only supports Windows 10 and 11 (not tested on other versions of Windows). Powered by FFMPEG.
 
-<img width="1786" height="1075" alt="image" src="https://github.com/user-attachments/assets/7161a45f-c8bb-4f61-bc97-0480aa65d382" />
+<img width="1786" height="1028" alt="image" src="https://github.com/user-attachments/assets/53411634-ffc3-42b4-aa7f-76e2e34aa8e2" />
+
 
 ## How to build
 You need to have at least .NET 9 runtime installed to build the software. Download the latest runtime [here](https://dotnet.microsoft.com/en-us/download). If you're not sure which one to download, try [.NET 9.0 Version 9.0.203](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-9.0.203-windows-x64-installer)
